@@ -24,3 +24,11 @@ showModal.forEach(m => {
 // because it will call the function as soon as the JavaScript loads
 closeModalBtn.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+// add keydown event listener
+// use "ESC" to close the modal window
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
